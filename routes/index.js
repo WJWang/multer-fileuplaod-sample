@@ -20,7 +20,7 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.post('/file', upload.single('photo'), (req, res) => {
+router.post('/file', upload.single('photo'), function (req, res) {
   const url = req.file.path.split('public/')[1];
   res.render('photo', {
     title: req.body.title,
