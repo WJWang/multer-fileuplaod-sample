@@ -3,3 +3,12 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+  form(name="add-estimation", method="post" action="/file" enctype="multipart/form-data")
+    div.file
+      span.label Photo
+      input(type="file" name="photo")
+    div.input
+        span.label Title
+        input(type="text", name="title")
+    div.actions
+        input(type="submit")
